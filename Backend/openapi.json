@@ -1,0 +1,856 @@
+openapi: 3.0.3
+info:
+  title: Exchange Tracker Platform
+  description: |-
+    This goal of the website is to let a user sign in or register, the user can then add transactions or calculate a conversion based on the exchange rates shown. Upon adding a transaction, the user can check his transaction history. The exchange rates are calculated as an average of all transactions recorded and based on a 3 day time window. A user can predict rates based on future dates. He also can send money to other logged in users, all in all with an advanced user management system that sends email after each transaction.
+    Some useful links:
+    - [What's the LBP rate today?](https://lbprate.com)
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: afd08@mail.aub.edu
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+  - url: http://127.0.0.1:5000
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        added_date:
+          type: string
+          format: date-time
+          example: '2024-04-04T17:32:32'
+        id:
+          type: integer
+          example: 31
+        lbp_amount:
+          type: number
+          format: float
+          example: 50.0
+        usd_amount:
+          type: number
+          format: float
+          example: 1000.0
+        usd_to_lbp:
+          type: boolean
+          example: false
+        user_id:
+          type: integer
+          nullable: true
+          example: null
+    TransactionsArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/Transaction'
+    CreateNewUser:
+      type: object
+      required:
+        - user_name
+        - password
+        - email
+      properties:
+        user_name:
+          type: string
+          example: 'Taline'
+        password:
+          type: string
+          format: password
+          example: 'strongPassword123'
+        email:
+          type: string
+          example: "talineslim@gmail.com"
+          
+    AddUser:
+      type: object
+      properties:
+        user_id:
+          type: integer
+          format: int64
+          example: 1
+        user_name:
+          type: string
+          example: Jamie
+    Authentication:
+      type: object
+      required:
+        - username
+        - password
+      properties:
+        username:
+          type: string
+          example: john_doe
+        password:
+          type: string
+          format: password
+      example: {
+        "user_name": "lyn",
+        "password": "lyn"
+      }
+    Token:
+      type: object
+      properties:
+        token:
+          type: string
+          example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+          example: "User with this username already exists"
+    Std-Avg:
+      type: object
+      properties:
+        usd_buy_rate_average:
+          type: number
+          format: float
+          example: 92812.5
+        usd_buy_rate_standard_deviation:
+          type: number
+          format: float
+          example: 17310.469194969846
+        usd_sell_rate_average:
+          type: number
+          format: float
+          example: 91545.454545
+        usd_sell_rate_standard_deviation:
+          type: number
+          format: float
+          example: 17319.79
+    Total-Amount-Exchanged:
+      type: object
+      properties:
+        total_lbp_amount_exchanged:
+          type: number
+          format: float
+          example: 3574000
+        total_usd_amount_exchanged:
+          type: number
+          format: float
+          example: 39
+    Set-Date-Range:
+      type: object
+      properties:
+        start_date:
+          type: string
+          format: date
+          example: "2024-02-28"
+        end_date:
+          type: string
+          format: date
+          example: "2024-04-10"
+    Fluctuation-Graph-Output:
+      type: object
+      properties:
+        usd_buy_dates:
+          type: array
+          items:
+            type: string
+            format: date
+          example: [
+                    "2024-03-14",
+                    "2024-03-16",
+                    "2024-03-18",
+                    "2024-03-19",
+                    "2024-03-21",
+                    "2024-03-22",
+                    "2024-04-05",
+                    "2024-04-08",
+                    "2024-04-10",
+                    "2024-04-17",
+                    "2024-04-22"
+                  ]
+        usd_buy_rates:
+          type: array
+          items:
+            type: number
+            format: float
+            example:
+                    
+                      98000,
+                      100000,
+                      98000,
+                      94428.57142857143,
+                      84500,
+                      94400,
+                      87000,
+                      98000,
+                      93627.27272727272,
+                      113000,
+                      95600
+                    
+        usd_sell_dates:
+          type: array
+          items:
+            type: string
+            format: date
+          example: [
+                    "2024-03-13",
+                    "2024-03-16",
+                    "2024-03-19",
+                    "2024-03-21",
+                    "2024-03-22",
+                    "2024-04-05",
+                    "2024-04-10",
+                    "2024-04-17",
+                    "2024-04-22"
+                  ]
+        usd_sell_rates:
+          type: array
+          items:
+            type: number
+            format: float
+            example:
+                    
+                      90000,
+                      98333.33333333333,
+                      90000,
+                      87000,
+                      93857.14285714286,
+                      90000,
+                      95450,
+                      110000,
+                      89777.77777777778
+                    
+    Predict-Rate:
+      type: object
+      properties:
+       date:
+          type: string
+          format: date
+          example: "2024-04-29"
+    Predict-Rate-Output:
+      type: object
+      properties:
+       rate:
+          type: number
+          format: float
+          example: 93449.3
+          
+    Forgot-Password:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          example: "ahmad.dimashkie@gmail.com"
+    
+    Reset-Password:
+      type: object
+      properties:
+        OTP:
+          type: string
+          example: "f37485658d56931daab889aa2ee1911f"
+        new_password:
+          type: string
+          format: password
+          example: "test12"
+    
+    Change-Password:
+      type: object
+      properties:
+        old_password:
+          type: string
+          format: password
+          example: "test12"
+        new_password:
+          type: string
+          format: password
+          example: "test1"
+        confirm_password:
+          type: string
+          format: password
+          example: "test1"
+    
+    Change-Email:
+      type: object
+      properties:
+        new_email:
+          type: string
+          format: email
+          example: "afd08@mail.aub.edu"
+    
+    Change-Credit-Card:
+      type: object
+      properties:
+        new_card_number:
+          type: string
+          example: "1234567891234567"
+        new_month:
+          type: string
+          example: "4"
+        new_year:
+          type: string
+          example: "2024"
+        new_cvv:
+          type: string
+          example: "456"
+    
+    Send-Transaction-To-User:
+      type: object
+      properties:
+        email_of_recipient:
+          type: string
+          format: email
+          example: "husseinchamseddine2003@gmail.com"
+        amount:
+          type: number
+          format: float
+          example: 3
+        usd_or_lbp:
+          type: string
+          example: "USD"
+    
+    Accept-Decline-Transaction:
+      type: object
+      properties:
+        transaction_id:
+          type: integer
+          example: 521739
+        accept:
+          type: boolean
+          example: true
+    
+    Add-Credit-Card:
+      type: object
+      properties:
+        card_number:
+          type: string
+          example: "7391045094729104"
+        month:
+          type: string
+          example: "01"
+        year:
+          type: string
+          example: "2028"
+        cvv:
+          type: string
+          example: "667"
+    
+    Add-Balance:
+      type: object
+      properties:
+        amount:
+          type: number
+          format: float
+          example: 100
+        usd_or_lbp:
+          type: string
+          example: "USD"
+          
+    Fetch-Balance-Output:
+      type: object
+      properties:
+        usd_balance:
+          type: number
+          format: float
+          example: 150
+        lbp_balance:
+          type: number
+          format: float
+          example: 150000 
+    
+    Fetch-Email-Output:
+      type: object
+      properties:
+        email:
+          type: string
+          example: "ahmad.dimashkie@gmail.com"
+          
+    Max-Min-Rate:
+      type: object
+      properties:
+        max_usd_buy_rate:
+          type: number
+          format: float
+          example: 150000
+        max_usd_buy_rate_date:
+          type: string
+          format: date
+          example: "Wed, 17 Apr 2024 15:53:24 GMT"
+        max_usd_sell_rate:
+          type: number
+          format: float
+          example: 150000
+        max_usd_sell_rate_date:
+          type: string
+          format: date
+          example: "Wed, 17 Apr 2024 15:53:24 GMT"
+        min_usd_buy_rate:
+          type: number
+          format: float
+          example: 15000
+        min_usd_buy_rate_date:
+          type: string
+          format: date
+          example: "Wed, 16 Apr 2024 15:53:24 GMT"
+        min_usd_sell_rate:
+          type: number
+          format: float
+          example: 15000
+        min_usd_sell_rate_date:
+          type: string
+          format: date
+          example: "Wed, 16 Apr 2024 15:53:24 GMT"
+      
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    None:
+      type: apiKey
+      description: No authentication required
+      in: header
+      name: Authorization
+tags:
+  - name: User
+    description: Everything related to what a user can do
+  - name: Statistics
+    description: Everything related to the rates given a time period
+  - name: Fetch Exchange Rate
+    description: Display both Buy USD and Sell USD rates
+  - name: Fluctuation Graph
+    description: Display a fluctuation graph of the rates given a time period
+  - name: Predict Rate
+    description: Predict the USD Sell Rate given a date
+  - name: User Management
+    description: Everything related to user management system
+  - name: Transactions Between Users
+    description: Functionalities related to what a user can do within the application
+paths:
+  /create-user:
+    post:
+      tags:
+        - User
+      summary: Create User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateNewUser'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /transaction:
+    post:
+      tags:
+        - User
+      summary: Post Transaction As User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                usd_amount: 1
+                lbp_amount: 89000
+                usd_to_lbp: false
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - User
+      summary: Get Transaction History
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /authentication:
+    post:
+      tags:
+        - User
+      summary: 'Get Authentication '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Authentication'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /statistics/min-max-rates:
+    get:
+      tags:
+        - Statistics
+      summary: Min Max Rates
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+            
+  /statistics/std-avg:
+    get:
+      tags:
+        - Statistics
+      summary: Std and Avg of the Rates
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /statistics/total-amount-exchanged:
+    get:
+      tags:
+        - Statistics
+      summary: Total Amount Exchanged
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /set-date-range:
+    post:
+      tags:
+        - Statistics
+      summary: 'Set Date Range '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                start_date: '2024-03-28'
+                end_date: '2024-04-10'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /fetch-exchange-rate:
+    get:
+      tags:
+        - Fetch Exchange Rate
+      summary: Fetch Exchange Rate
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /fluctuation-graph:
+    post:
+      tags:
+        - Fluctuation Graph
+      summary: Fluctuation Graph
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                start_date: '2023-03-18'
+                end_date: '2024-04-24'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /predict-rate:
+    post:
+      tags:
+        - Predict Rate
+      summary: Predict Rate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                date: '2024-04-28'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /forgot-password:
+    post:
+      tags:
+        - User Management
+      summary: Forgot Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: ahmad.dimashkie@gmail.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /reset-password:
+    post:
+      tags:
+        - User Management
+      summary: Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                OTP: f37485658d56931daab889aa2ee1911f
+                new_password: test12
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /change-password:
+    post:
+      tags:
+        - User Management
+      summary: Change Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                old_password: test12
+                new_password: test1
+                confirm_password: test1
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /change-email:
+    post:
+      tags:
+        - User Management
+      summary: 'Change Email '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                new_email: afd08@mail.aub.edu
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /change-credit-card:
+    post:
+      tags:
+        - User Management
+      summary: Change Credit Card
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                new_card_number: '1234567891234567'
+                new_month: '4'
+                new_year: '2024'
+                new_cvv: '456'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+            
+  /fetch-email:
+    get:
+      tags:
+        - User Management
+      summary: Fetch User Email
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_email:
+                    type: string
+                    format: email
+                    example: "user@example.com"
+        '403':
+          description: Empty Bearer token or User ID does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Empty Bearer token"
+        '400':
+          description: Error response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: "Invalid request"
+  /fetch-balance:
+      get:
+        tags:
+          - User Management
+        summary: Fetch User Balance
+        security:
+          - bearerAuth: []
+        responses:
+          '200':
+            description: Successful response
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    usd_balance:
+                      type: number
+                      format: float
+                      example: 100.0
+                    lbp_balance:
+                      type: number
+                      format: float
+                      example: 500000.0
+          '403':
+            description: Empty Bearer token or User ID does not exist
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    success:
+                      type: boolean
+                      example: false
+                    message:
+                      type: string
+                      example: "Empty Bearer token"
+          '400':
+            description: Error response
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    error:
+                      type: string
+                      example: "Invalid request"
+    
+  /send-transaction-to-user:
+    post:
+      tags:
+        - Transactions Between Users
+      summary: Send Transaction To User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email_of_recipient: husseinchamseddine2003@gmail.com
+                amount: 3
+                usd_or_lbp: USD
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /accept-decline-transaction:
+    post:
+      tags:
+        - Transactions Between Users
+      summary: Accept Decline Transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                transaction_id: 521739
+                accept: true
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /add-credit-card:
+    post:
+      tags:
+        - Transactions Between Users
+      summary: Add Credit Card
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                card_number: '7391045094729104'
+                month: '01'
+                year: '2028'
+                cvv: '667'
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /add-balance:
+    post:
+      tags:
+        - Transactions Between Users
+      summary: Add Balance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                amount: 100
+                usd_or_lbp: USD
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
