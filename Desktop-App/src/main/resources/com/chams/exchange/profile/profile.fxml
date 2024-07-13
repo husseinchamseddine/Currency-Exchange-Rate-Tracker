@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="740.0" prefWidth="1220.0" styleClass="secondary-color" stylesheets="@profile.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chams.exchange.profile.ProfileController">
+   <children>
+      <VBox prefHeight="731.0" prefWidth="1220.0" spacing="30.0">
+         <children>
+            <HBox prefHeight="94.0" prefWidth="1220.0">
+               <children>
+                  <Label alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="880.0" text="Profile Details" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri Bold" size="25.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="209.0" text="Email" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+
+                  <Label fx:id="userEmail" prefHeight="39.0" prefWidth="163.0" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="135.0" prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="209.0" text="Change Email" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="newEmail" alignment="CENTER" prefHeight="26.0" prefWidth="179.0" styleClass="text-black" stylesheets="@profile.css">
+                     <HBox.margin>
+                        <Insets top="7.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeE" prefHeight="26.0" prefWidth="78.0" text="Change">
+                     <HBox.margin>
+                        <Insets left="10.0" top="7.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="372.0" prefHeight="201.0" prefWidth="1220.0">
+               <children>
+                  <VBox prefHeight="226.0" prefWidth="230.0">
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="209.0" text="Change Password" textFill="WHITE">
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="75.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="240.0" layoutY="10.0" prefHeight="226.0" prefWidth="0.0">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="261.0" prefWidth="4.0" />
+                     </children></VBox>
+                  <VBox prefHeight="201.0" prefWidth="152.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="56.0" prefWidth="104.0" text="Old Password:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="104.0" text="New Password:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="66.0" prefHeight="56.0" prefWidth="138.0" text="Confirm Password:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="226.0" prefWidth="156.0">
+                     <children>
+                        <HBox prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="oldPassword" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="newPassword" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="30.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="66.0" prefHeight="56.0" prefWidth="170.0" />
+                        <HBox layoutX="10.0" layoutY="122.0" prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="confirmPassword" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeP" prefHeight="26.0" prefWidth="78.0" text="Submit">
+                           <VBox.margin>
+                              <Insets left="35.0" top="9.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="372.0" prefHeight="258.0" prefWidth="1220.0">
+               <children>
+                  <VBox prefHeight="282.0" prefWidth="230.0">
+                     <children>
+                        <Label prefHeight="38.0" prefWidth="209.0" text="Credit Card" textFill="WHITE">
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="100.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="240.0" layoutY="10.0" prefHeight="226.0" prefWidth="0.0">
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="261.0" prefWidth="4.0" />
+                     </children></VBox>
+                  <VBox prefHeight="256.0" prefWidth="155.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="56.0" prefWidth="104.0" text="Card Number:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="104.0" text="Month:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="41.0" prefWidth="104.0" text="Year:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="122.0" prefHeight="54.0" prefWidth="104.0" text="CVV:" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="256.0" prefWidth="184.0">
+                     <children>
+                        <HBox prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="numberInput" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="monthInput" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="66.0" prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="yearInput" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="122.0" prefHeight="56.0" prefWidth="170.0">
+                           <children>
+                              <TextField fx:id="cvvInput" alignment="CENTER" styleClass="text-black" stylesheets="@profile.css">
+                                 <HBox.margin>
+                                    <Insets top="18.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="243.0" mnemonicParsing="false" onAction="#addCard" prefHeight="26.0" prefWidth="78.0" text="Submit">
+                           <VBox.margin>
+                              <Insets left="35.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#changeC" prefHeight="26.0" prefWidth="78.0" text="Change">
+
+                           <VBox.margin>
+                              <Insets left="35.0" top="9.0" />
+                           </VBox.margin>
+                        </Button>
+
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+
+</VBox>

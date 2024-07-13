@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="740.0" prefWidth="1220.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chams.exchange.moreInfo.MoreInfoController">
+
+    <HBox spacing="15" style="-fx-padding: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <!-- Left side - Data and Stats -->
+        <VBox prefHeight="719.0" prefWidth="500.0" spacing="10">
+            <!-- Statistics and Insights Section -->
+            <Label style="-fx-font-size: 20pt; -fx-font-weight: bold;" text="Statistics and Insights" />
+
+            <VBox spacing="5">
+                <!-- Buy/Sell Max/Min Rates Section -->
+                <Label style="-fx-font-size: 10pt; -fx-font-weight: bold;" text="Buy/Sell Max/Min Rates:" />
+                <VBox spacing="2">
+                    <HBox spacing="5">
+                        <Label text="Max USD Buy Rate: " />
+                        <Label fx:id="maxUsdBuyRateLabel" />
+                        <Label text=" (" />
+                        <Label fx:id="maxUsdBuyDateLabel" />
+                        <Label text=")" />
+                    </HBox>
+                    <HBox spacing="5">
+                        <Label text="Max USD Sell Rate: " />
+                        <Label fx:id="maxUsdSellRateLabel" />
+                        <Label text=" (" />
+                        <Label fx:id="maxUsdSellDateLabel" />
+                        <Label text=")" />
+                    </HBox>
+                    <HBox spacing="5">
+                        <Label text="Min USD Buy Rate: " />
+                        <Label fx:id="minUsdBuyRateLabel" />
+                        <Label text=" (" />
+                        <Label fx:id="minUsdBuyDateLabel" />
+                        <Label text=")" />
+                    </HBox>
+                    <HBox spacing="5">
+                        <Label text="Min USD Sell Rate: " />
+                        <Label fx:id="minUsdSellRateLabel" />
+                        <Label text=" (" />
+                        <Label fx:id="minUsdSellDateLabel" />
+                        <Label text=")" />
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Standard Deviation Section -->
+            <Label style="-fx-font-size: 10pt; -fx-font-weight: bold;" text="Standard Deviation:" />
+            <VBox spacing="2">
+                <HBox spacing="5">
+                    <Label text="USD Buy Rate Standard Deviation: " />
+                    <Label fx:id="buyRateSDLabel" />
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="USD Sell Rate Standard Deviation: " />
+                    <Label fx:id="sellRateSDLabel" />
+                </HBox>
+            </VBox>
+
+            <!-- BUY/SELL Average Section -->
+            <Label style="-fx-font-size: 10pt; -fx-font-weight: bold;" text="BUY/SELL Average:" />
+            <VBox spacing="2">
+                <HBox spacing="5">
+                    <Label text="USD Buy Rate Average: " />
+                    <Label fx:id="usdBuyAverageLabel" />
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="USD Sell Rate Average: " />
+                    <Label fx:id="usdSellAverageLabel" />
+                </HBox>
+            </VBox>
+
+            <!-- Total Amounts Exchanged Section -->
+            <Label style="-fx-font-size: 10pt; -fx-font-weight: bold;" text="Total Amounts Exchanged:" />
+            <VBox spacing="2">
+                <HBox spacing="5">
+                    <Label text="Total USD Amount: " />
+                    <Label fx:id="totalUSDLabel" />
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="Total LBP Amount: " />
+                    <Label fx:id="totalLBPLabel" />
+                </HBox>
+            </VBox>
+            <Label style="-fx-font-size: 10pt; -fx-font-weight: bold;" text="Insert the time period of statistics:" />
+            <VBox spacing="2">
+                <HBox spacing="5">
+                    <Label text="Start date:" />
+                    <TextField fx:id="startDate" />
+                </HBox>
+                <HBox spacing="5">
+                    <Label text="End date:" />
+                    <TextField fx:id="endDate" />
+                </HBox>
+                <HBox spacing="5">
+                    <Button onAction="#scale" prefHeight="26.0" prefWidth="84.0" text="Scale">
+                        <HBox.margin>
+                            <Insets left="75.0" />
+                        </HBox.margin></Button>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <!-- Right side - Graphs -->
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <LineChart fx:id="buyChart" style="-fx-pref-width: 500px; -fx-pref-height: 300px;">
+                <xAxis>
+                    <CategoryAxis label="Date" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Exchange Rate" />
+                </yAxis>
+            </LineChart>
+
+            <LineChart fx:id="sellChart" style="-fx-pref-width: 500px; -fx-pref-height: 300px;">
+                <xAxis>
+                    <CategoryAxis label="Date" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Exchange Rate" />
+                </yAxis>
+            </LineChart>
+
+            <HBox spacing="5">
+                <Label text="Start date:" />
+                <TextField fx:id="startGraph" />
+            </HBox>
+            <HBox spacing="5">
+                <Label text="End date:" />
+                <TextField fx:id="endGraph" />
+            </HBox>
+            <HBox spacing="5">
+                <Button onAction="#fetchGraph" prefHeight="26.0" prefWidth="84.0" text="Scale">
+                    <HBox.margin>
+                        <Insets left="75.0" />
+                    </HBox.margin></Button>
+            </HBox>
+        </VBox>
+    </HBox>
+
+</AnchorPane>

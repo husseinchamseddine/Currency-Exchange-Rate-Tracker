@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="625534f3-9b45-435f-aacd-47a2e83d43c5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/SD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/minMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/setDate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/totalAmounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/Exchange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/Exchange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/ExchangeRates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/ExchangeRates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/balance/Balance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/balance/Balance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/moreInfo/MoreInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/moreInfo/MoreInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/chams/exchange/profile/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/chams/exchange/profile/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/balance/balance.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/balance/balance.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/moreInfo/moreInfo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/moreInfo/moreInfo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/profile/profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/profile/profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/chams/exchange/rates/rates2.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/com/chams/exchange/parent.fxml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/com/chams/exchange/profile/profile.fxml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2cyrwVBULnj9rb7Dn5MNCYdZgIZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/AUB/2. SPRING 2024/EECE 430/EECE 430L/Desktop/exchange-desktop-husseinchamseddine/exchange/src/main/resources/com/chams/exchange/balance&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\resources\com\chams\exchange\balance" />
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\resources\com\chams\exchange\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\resources\com\chams\exchange\login" />
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\java\com\chams\exchange" />
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\img" />
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\resources\com\chams\exchange" />
+      <recent name="C:\Users\user\Desktop\AUB\2. SPRING 2024\EECE 430\EECE 430L\Desktop\exchange-desktop-husseinchamseddine\exchange\src\main\resources\com\chams\exchange\moreInfo" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.chams.exchange.moreInfo" />
+      <recent name="com.chams.exchange.login" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chams.exchange.Main" />
+      <module name="exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chams.exchange.welcomepage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-15.0.2-corretto-15.0.2-4caba194b151-9bc2d75a" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="625534f3-9b45-435f-aacd-47a2e83d43c5" name="Changes" comment="" />
+      <created>1709094904578</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709094904578</updated>
+      <workItem from="1709094907936" duration="9785000" />
+      <workItem from="1711109634203" duration="4694000" />
+      <workItem from="1711200059905" duration="4292000" />
+      <workItem from="1711219084513" duration="5800000" />
+      <workItem from="1711225622485" duration="4286000" />
+      <workItem from="1711231678963" duration="1828000" />
+      <workItem from="1711289717772" duration="2055000" />
+      <workItem from="1711392787758" duration="43000" />
+      <workItem from="1711392850345" duration="8862000" />
+      <workItem from="1711456511200" duration="4270000" />
+      <workItem from="1711532618655" duration="9092000" />
+      <workItem from="1712520963402" duration="11268000" />
+      <workItem from="1712768988736" duration="4479000" />
+      <workItem from="1712857747818" duration="24209000" />
+      <workItem from="1713087064050" duration="1980000" />
+      <workItem from="1713103102201" duration="7530000" />
+      <workItem from="1713164846783" duration="1538000" />
+      <workItem from="1713197801536" duration="3180000" />
+      <workItem from="1713210279353" duration="1224000" />
+      <workItem from="1713409623670" duration="2121000" />
+      <workItem from="1713465559153" duration="3662000" />
+      <workItem from="1713523405092" duration="12577000" />
+      <workItem from="1713550257681" duration="4102000" />
+      <workItem from="1713561159956" duration="3149000" />
+      <workItem from="1713564502408" duration="704000" />
+      <workItem from="1713610301972" duration="2742000" />
+      <workItem from="1713613085472" duration="3459000" />
+      <workItem from="1713690306295" duration="800000" />
+      <workItem from="1713696655988" duration="1194000" />
+      <workItem from="1713722218961" duration="7113000" />
+      <workItem from="1713734516145" duration="7832000" />
+      <workItem from="1713793028733" duration="1628000" />
+      <workItem from="1713794695743" duration="5200000" />
+      <workItem from="1713869608220" duration="2324000" />
+      <workItem from="1713877976648" duration="7366000" />
+      <workItem from="1713887725694" duration="760000" />
+      <workItem from="1713954595822" duration="137000" />
+      <workItem from="1713956720886" duration="1734000" />
+      <workItem from="1714047965277" duration="614000" />
+      <workItem from="1714050944500" duration="1485000" />
+      <workItem from="1714060652325" duration="7517000" />
+      <workItem from="1714084485607" duration="916000" />
+      <workItem from="1714127777558" duration="281000" />
+      <workItem from="1714152738697" duration="10789000" />
+      <workItem from="1714204416784" duration="3190000" />
+      <workItem from="1714208149995" duration="20994000" />
+      <workItem from="1714238050838" duration="4298000" />
+      <workItem from="1714242391888" duration="14806000" />
+      <workItem from="1714262358326" duration="85000" />
+      <workItem from="1714262544066" duration="227000" />
+      <workItem from="1714262795125" duration="1465000" />
+      <workItem from="1714295058116" duration="126000" />
+      <workItem from="1714295207369" duration="263000" />
+      <workItem from="1714295866851" duration="10943000" />
+      <workItem from="1714559312815" duration="18899000" />
+      <workItem from="1714596568570" duration="455000" />
+      <workItem from="1714640265380" duration="2532000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/chams/exchange/login/Login.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/chams/exchange/api/model/changeCard.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

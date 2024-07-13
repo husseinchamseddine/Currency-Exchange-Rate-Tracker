@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="740.0" prefWidth="1220.0" styleClass="secondary-color" stylesheets="@balance.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chams.exchange.balance.Balance">
+    <children>
+        <VBox prefHeight="749.0" prefWidth="880.0" spacing="30.0">
+            <children>
+                <HBox prefHeight="94.0" prefWidth="1220.0">
+               <children>
+                      <Label alignment="BOTTOM_LEFT" prefHeight="47.0" prefWidth="880.0" text="Balance Details" textFill="WHITE">
+                          <font>
+                              <Font name="Calibri Bold" size="25.0" />
+                          </font>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                      </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="39.0" prefWidth="880.0">
+                <children>
+                    <Label prefHeight="38.0" prefWidth="209.0" text="USD Balance" textFill="WHITE">
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                        <font>
+                            <Font size="17.0" />
+                        </font>
+                    </Label>
+
+                    <Label fx:id="usdBalance" prefHeight="39.0" prefWidth="163.0" textFill="WHITE">
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="135.0" prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="209.0" text="LBP Balance" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbpBalance" prefHeight="42.0" prefWidth="163.0" stylesheets="@balance.css" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="232.0" prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="231.0" text="Add Balance" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" />
+                  <Label layoutX="362.0" layoutY="10.0" prefHeight="38.0" prefWidth="155.0" text="Enter Amount:" textFill="WHITE">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="39.0" prefWidth="78.0">
+                     <children>
+                        <TextField fx:id="addedBalance" alignment="CENTER" prefHeight="40.0" prefWidth="91.0" styleClass="text-black">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="166.0" text="USD or LBP?" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="220.0" layoutY="10.0" prefHeight="39.0" prefWidth="78.0">
+                     <children>
+                        <TextField fx:id="currencyType" alignment="CENTER" prefHeight="40.0" prefWidth="78.0" styleClass="text-black">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#addBalance" text="Add">
+                     <HBox.margin>
+                        <Insets left="50.0" top="7.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="272.0" prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="231.0" text="Send Transaction" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" />
+                  <Label layoutX="362.0" layoutY="10.0" prefHeight="38.0" prefWidth="155.0" text="Enter Amount:" textFill="WHITE">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="39.0" prefWidth="78.0">
+                     <children>
+                        <TextField fx:id="moneyTransaction" alignment="CENTER" prefHeight="40.0" prefWidth="91.0" styleClass="text-black">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="166.0" text="USD or LBP?" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="220.0" layoutY="10.0" prefHeight="39.0" prefWidth="78.0">
+                     <children>
+                        <TextField fx:id="transactionType" alignment="CENTER" prefHeight="40.0" prefWidth="78.0" styleClass="text-black">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <Label layoutX="480.0" layoutY="10.0" prefHeight="38.0" prefWidth="166.0" text="Enter Email:" textFill="WHITE">
+                     <padding>
+                        <Insets left="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="userEmail" alignment="CENTER" prefHeight="39.0" prefWidth="146.0" styleClass="text-black">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#transfer" text="Send">
+                     <HBox.margin>
+                        <Insets left="50.0" top="7.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="344.0" prefHeight="39.0" prefWidth="880.0">
+               <children>
+                  <Label prefHeight="38.0" prefWidth="231.0" text="Recieve Transaction" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" prefWidth="0.0" />
+                  <Label layoutX="362.0" layoutY="10.0" prefHeight="38.0" prefWidth="155.0" text="Transaction ID:" textFill="WHITE">
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="39.0" prefWidth="78.0">
+                     <children>
+                        <TextField fx:id="transactionID" alignment="CENTER" prefHeight="40.0" prefWidth="91.0" styleClass="text-black">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton contentDisplay="CENTER" mnemonicParsing="false" prefHeight="18.0" prefWidth="103.0" text="Accept" textAlignment="CENTER" textFill="WHITE">
+                           <padding>
+                              <Insets left="8.0" top="10.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggle" />
+                           </toggleGroup>
+                        </RadioButton>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="481.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" prefHeight="28.0" prefWidth="108.0" text="Decline" textFill="WHITE" toggleGroup="$toggle">
+                           <padding>
+                              <Insets left="5.0" top="10.0" />
+                           </padding></RadioButton>
+                     </children></VBox>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#receive" text="Submit">
+                     <HBox.margin>
+                        <Insets left="50.0" top="7.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+
+            </children>
+        </VBox>
+    </children>
+
+</VBox>
