@@ -40,6 +40,5 @@ This project is a currency exchange platform where users can register, log in, a
 ## License
 This project is licensed under the MIT License.
 
-## Contact
-For inquiries or support, please contact [afd08@mail.aub.edu](mailto:afd08@mail.aub.edu).
+
 
